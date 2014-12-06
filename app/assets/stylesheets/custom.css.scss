@@ -1,2 +1,28 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+/* This CSS will be applied to all pages in the app */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
