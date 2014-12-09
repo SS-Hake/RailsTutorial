@@ -19,9 +19,9 @@
       <%= f.text_field :email, class: 'form-control' %>
       <!-- password title and field to enter password - then same again for confirmation -->
       <%= f.label :password %>
-      <%= f.text_field :password, class: 'form-control' %>
+      <%= f.password_field :password, class: 'form-control' %>
       <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.text_field :password_confirmation, class: 'form-control' %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
       <!-- Create User entry with the supplied info-->
       <%= f.submit "Create account", class: "btn btn-primary" %>
     <!-- end the ruby do block -->
