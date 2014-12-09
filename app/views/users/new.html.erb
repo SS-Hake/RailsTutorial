@@ -1,4 +1,31 @@
 <% provide(:title, 'Sign up') %>
 
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h2>Sign up!</h2>
+
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <!-- Takes users' name, email, password and password confirmation and POSTS to /USERS-->
+    <!-- Form_for takes blcok with one variable: f.  Calls to f return html elements which set/store attributes of a @user object.-->
+    <%= form_for(@user) do |f| %>
+      <!-- Render shared/error_messages--> 
+      <%= render 'shared/error_messages' %>
+      <!-- Class form-control is boostrap css which dicates the form stays fullscreen-->
+      <!-- Name title and field to enter username-->
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+      <!-- email title and field to enter email -->
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'form-control' %>
+      <!-- password title and field to enter password - then same again for confirmation -->
+      <%= f.label :password %>
+      <%= f.text_field :password, class: 'form-control' %>
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.text_field :password_confirmation, class: 'form-control' %>
+      <!-- Create User entry with the supplied info-->
+      <%= f.submit "Create account", class: "btn btn-primary" %>
+    <!-- end the ruby do block -->
+    <% end %>
+      
+  </div>
+</div>
