@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def create 
     @user = User.new(user_params)
     if @user.save
-      #This returns true if it can save successfully - handle the save here
+      #This returns true if it can save successfully
       flash[:success] = "Welcome to Chirp!"
       redirect_to @user
     else
