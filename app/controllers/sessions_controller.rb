@@ -14,8 +14,9 @@ class SessionsController < ApplicationController
       render 'new'
     end
   end
-  
+
   def destroy
+    #log user out and take them to the homepage
     log_out
     redirect_to root_url
   end
