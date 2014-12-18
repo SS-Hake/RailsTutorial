@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  
   def new
   end
   
@@ -7,6 +8,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       #if user name and password match log them in the the method created in sessions_helper
       log_in user
+      #Remember helper genertates a token and adds its digest to the database.  Adds it to a cookie
+      remember user
       redirect_to user
     else
       #Create and display the error message "cant log in"
@@ -17,7 +20,7 @@ class SessionsController < ApplicationController
 
   def destroy
     #log user out and take them to the homepage
-    log_out
+    log_out if logged_in?
     redirect_to root_url
   end
   
