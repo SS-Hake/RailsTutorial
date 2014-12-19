@@ -20,6 +20,10 @@ class UsersController < ApplicationController
     end
   end
   
+   def edit
+    @user = User.find(params[:id])
+  end
+  
   #These methods are only used internally and as such can be 'private'
   private
     #This method ensures that publlic users have access only to the parameters of @user we want them
