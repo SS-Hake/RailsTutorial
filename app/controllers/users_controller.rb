@@ -24,6 +24,15 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      #handle an edit here
+    else
+      render 'edit'
+    end
+  end
+  
   #These methods are only used internally and as such can be 'private'
   private
     #This method ensures that publlic users have access only to the parameters of @user we want them
