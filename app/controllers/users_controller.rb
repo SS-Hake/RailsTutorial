@@ -35,8 +35,9 @@ class UsersController < ApplicationController
   
   #These methods are only used internally and as such can be 'private'
   private
-    #This method ensures that publlic users have access only to the parameters of @user we want them
-    #to have - disallows users to set thier own admin priviledges.
+    #This method ensures that publlic users have access only to the parameters 
+    #of @user we want themto have - disallows users to set thier own admin 
+    #priviledges.
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
